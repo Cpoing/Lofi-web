@@ -31,3 +31,5 @@ const RadioStations = ({ Ambient }) => {
     </div>
   );
 };
+
+export default RadioStations;
