@@ -49,7 +49,7 @@ function App() {
       <div className="radioContainer">
         <div className="logo">LofiWave</div>
         <div className="radioListContainer">
-          <RadioStations Ambient={AmbientRenders} />
+          <RadioStations Ambient={AmbientRenders} Lofi={LofiGirlVideo} />
         </div>
       </div>
 
