@@ -2,8 +2,18 @@ import { useState } from "react";
 import "./App.css";
 import RadioStations from "./components/radioStations";
 import { setActiveStation } from "./hooks/setActiveStation";
+import play from "./images/playBtn.png";
+import pauseImg from "./images/pause.png";
+import { motion } from "framer-motion";
+import ReactPlayer from "react-player";
+import { setActiveStation } from "./hooks/setActiveStation";
+import { i } from "vite/dist/node/types.d-aGj9QkWt";
 
 function App() {
+  const [BtnClass, setBtnClass] = useState("PlayPause");
+  const [BtnClass2, setBtnClass2] = useState("playBtn");
+  const [playPauseImg, setPlayPause] = useState(play);
+
   const [video, setVideo] = useState(
     `//www.youtube.com/embed/TURbeWK2wwg?autoplay=1&mute=1&start=1`,
   );
@@ -42,6 +52,33 @@ function App() {
     playLiveStream(true);
     setActiveStation(e, stationName);
     setActiveStationState(false);
+  };
+
+  const handlePausePlaySwitch = (e) => {
+    let className = e.target.className;
+
+    if (className === "PlayPause" || className === "playBtn") {
+      setPlayPause(pauseImg);
+      setBtnClass("PlayPause2");
+      setBtnClass2("playBtn2");
+      start();
+    } else if (className === "PlayPause2" || className === "playBtn2") {
+      setPlayPause(play);
+      setBtnClass("PlayPause");
+      setBtnClass2("playBtn");
+      pause();
+    }
+  };
+
+  const start = () => {
+    playLiveStream(false);
+    playLiveStream(true);
+    setPauseScreen("unpauseScreen");
+  };
+
+  const pause = () => {
+    setPauseScreen("pauseScreen");
+    playLiveStream(false);
   };
 
   return (
