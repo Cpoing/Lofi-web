@@ -7,7 +7,8 @@ import pauseImg from "./images/pause.png";
 import { motion } from "framer-motion";
 import ReactPlayer from "react-player";
 import { setActiveStation } from "./hooks/setActiveStation";
-import { i } from "vite/dist/node/types.d-aGj9QkWt";
+import PauseImage from "./components/pauseImage";
+import AdditionSettings from "./components/additionalInfo";
 
 function App() {
   const [BtnClass, setBtnClass] = useState("PlayPause");
@@ -38,6 +39,10 @@ function App() {
     );
     playLiveStream(true);
     setActiveStationState(true);
+    setPauseScreen("unpauseScreen");
+    setPlayPause(pauseImg);
+    setBtnClass("PlayPause2");
+    setBtnClass2("playBtn2");
   };
 
   const AmbientRenders = (e) => {
@@ -52,6 +57,10 @@ function App() {
     playLiveStream(true);
     setActiveStation(e, stationName);
     setActiveStationState(false);
+    setPauseScreen("unpauseScreen");
+    setPlayPause(pauseImg);
+    setBtnClass("PlayPause2");
+    setBtnClass2("playBtn2");
   };
 
   const handlePausePlaySwitch = (e) => {
@@ -88,9 +97,33 @@ function App() {
         <div className="radioListContainer">
           <RadioStations Ambient={AmbientRenders} Lofi={LofiGirlVideo} />
         </div>
-      </div>
 
-      <div className="audioControlContainer"></div>
+        <div className="audioControlContainer"></div>
+        <AudioControls
+          playPause={handlePausePlaySwitch}
+          buttonClass={BtnClass}
+          playPauseImage={playPauseImg}
+          buttonClass2={BtnClass2}
+          LiveStreamAudio={currentLivestream}
+          LiveStreamPlayPause={livestream}
+        />
+      </div>
+      <div className={pauseScreen}>
+        <PauseImage />
+        <p style={{ marginTop: "0rem" }}>Music Paused</p>
+      </div>
+      <AdditionSettings youtube={youtubeChannel} radio={stationName} />
+      <div class="videoContainer">
+        <ReactPlayer
+          className="vid"
+          width="140%"
+          height="140%"
+          loop="true"
+          playing={livestream}
+          volume="mute"
+          url={video}
+        />
+      </div>
     </div>
   );
 }
