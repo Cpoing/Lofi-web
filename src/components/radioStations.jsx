@@ -1,8 +1,9 @@
-import { motion } from "framer-motion";
 import React from "react";
 import { setActiveStation } from "../hooks/setActiveStation";
+import triangle from "../images/playBtn.png";
+import { motion } from "framer-motion";
 
-const RadioStations = ({ Ambient }) => {
+const RadioStations = ({ Ambient, Lofi }) => {
   return (
     <div className="radioList">
       <motion.div animate={{ opacity: [0, 1] }} transition={{ delay: 0 }}>

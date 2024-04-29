@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import ReactPlayer from "react-player";
+import mute from "../images/mute.png";
+import volumeOn from "../images/volumeOn.png";
 
 let lastPlayedVolume = 0;
 
