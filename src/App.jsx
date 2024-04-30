@@ -6,7 +6,6 @@ import play from "./images/playBtn.png";
 import pauseImg from "./images/pause.png";
 import { motion } from "framer-motion";
 import ReactPlayer from "react-player";
-import { setActiveStation } from "./hooks/setActiveStation";
 import PauseImage from "./components/pauseImage";
 import AdditionSettings from "./components/additionalInfo";
 
