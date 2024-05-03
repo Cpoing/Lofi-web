@@ -3,7 +3,7 @@ import { setActiveStation } from "../hooks/setActiveStation";
 import triangle from "../images/playBtn.png";
 import { motion } from "framer-motion";
 
-const RadioStations = ({ Ambient, Lofi }) => {
+const RadioStations = ({ Ambient, Lofi, StationName }) => {
   return (
     <div className="radioList">
       <motion.div animate={{ opacity: [0, 1] }} transition={{ delay: 0 }}>

@@ -75,3 +75,5 @@ const AudioControls = ({
     </div>
   );
 };
+
+export default AudioControls;

@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import ReactPlayer from "react-player";
 import PauseImage from "./components/pauseImage";
 import AdditionSettings from "./components/additionalInfo";
+import AudioControls from "./components/audioControl";
 
 function App() {
   const [BtnClass, setBtnClass] = useState("PlayPause");
@@ -112,7 +113,7 @@ function App() {
         <p style={{ marginTop: "0rem" }}>Music Paused</p>
       </div>
       <AdditionSettings youtube={youtubeChannel} radio={stationName} />
-      <div class="videoContainer">
+      <div className="videoContainer">
         <ReactPlayer
           className="vid"
           width="140%"
