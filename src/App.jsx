@@ -1,5 +1,6 @@
 import { useState } from "react";
-import "./App.css";
+import "./styles/audioControl.css";
+import "./styles/index.css";
 import RadioStations from "./components/radioStations";
 import { setActiveStation } from "./hooks/setActiveStation";
 import play from "./images/playBtn.png";
